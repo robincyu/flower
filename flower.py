@@ -55,16 +55,16 @@ def end(s, color = "black", fill = "transparent", stroke_width = "1"):
 
 file = open(output_file, "w")
 file.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg width=\"" + str(canvas_size+margin_size) + "\" height=\"" + str(canvas_size+margin_size) + "\" viewBox=\"" + str(-(canvas_size+margin_size)/2) + " " + str(-(canvas_size+margin_size)/2) + " " + str(canvas_size+margin_size) + " " + str(canvas_size+margin_size) + "\" xmlns=\"http://www.w3.org/2000/svg\">\n")
-file.write("<style>text {font: " + str(font_size) + "px sans-serif; text-anchor: middle; dominant-baseline: middle;}</style>")
+file.write("<style>text {font: " + str(font_size) + "px sans-serif; text-anchor: middle; dominant-baseline: middle;}</style>\n")
 
 # Prepare petals and other constants
 end_x, end_y = 0, -canvas_size/2
-left_x, left_y = -petal_thickness*canvas_size/200, -canvas_size/4 + gravity
-right_x, right_y = petal_thickness*canvas_size/200, -canvas_size/4 + gravity
+left_x, left_y = -petal_thickness*canvas_size/200, -canvas_size/4 + gravity*canvas_size/1000
+right_x, right_y = petal_thickness*canvas_size/200, -canvas_size/4 + gravity*canvas_size/1000
 
 border_end_x, border_end_y = 0, -canvas_size/2 - 2
-border_left_x, border_left_y = -petal_thickness*canvas_size/200, -canvas_size/4 + gravity - 2
-border_right_x, border_right_y = petal_thickness*canvas_size/200, -canvas_size/4 + gravity - 2
+border_left_x, border_left_y = -petal_thickness*canvas_size/200, -canvas_size/4 + gravity*canvas_size/1000 - 2
+border_right_x, border_right_y = petal_thickness*canvas_size/200, -canvas_size/4 + gravity*canvas_size/1000 - 2
 
 outer_points = []
 border_outer_points = []
